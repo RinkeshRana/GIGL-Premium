@@ -1,0 +1,275 @@
+[
+    {
+        "image_v2": "None",
+        "name": "TRENDING",
+        "slug": "trending",
+        "top_books": [
+            {
+                "author": "Yuval Noah Harari",
+                "isPremium": 1,
+                "slug": "21-lessons-for-the-21st-century",
+                "thumbnail_v2": "thumb_v2942.png",
+                "title": "21 Lessons for the 21st Century"
+            },
+            {
+                "author": "A. P. J. Abdul Kalam and Arun Tiwari",
+                "isPremium": 0,
+                "slug": "wings-of-fire",
+                "thumbnail_v2": "thumb_v2577.png",
+                "title": "Wings of Fire.."
+            },
+            {
+                "author": "Adam Alter",
+                "isPremium": 1,
+                "slug": "irresistible-the-rise-of-addictive-technology-and-the-business-of-keeping-us-hooked",
+                "thumbnail_v2": "thumb_530_1614884488.png",
+                "title": " Irresistible: The Rise of Addictive Technology and the Business of Keeping Us Hooked"
+            },
+            {
+                "author": "Angela Duckworth",
+                "isPremium": 0,
+                "slug": "grit-the-power-of-passion-and-perseverance",
+                "thumbnail_v2": "thumb_205_1604853156.png",
+                "title": "Grit: The Power of Passion and Perseverance"
+            },
+            {
+                "author": "Napoleon Hill",
+                "isPremium": 0,
+                "slug": "think-and-grow-rich",
+                "thumbnail_v2": "thumb_15_1605418611.png",
+                "title": "Think and Grow Rich"
+            },
+            {
+                "author": "Mohnish Pabrai",
+                "isPremium": 1,
+                "slug": "the-dhandho-investor-the-low-risk-value-method-to-high-returns",
+                "thumbnail_v2": "thumb_139_1604849674.png",
+                "title": "The Dhandho Investor: The Low-Risk Value Method to High Returns"
+            },
+            {
+                "author": "By NaviRadjou, JaideepPrabhu, and Simone Ahuja",
+                "isPremium": 1,
+                "slug": "jugaad-innovation-think-frugal-be-flexible-generate-breakthrough-growth",
+                "thumbnail_v2": "thumb_142_1604849795.png",
+                "title": "Jugaad Innovation Think Frugal, Be Flexible, Generate Breakthrough Growth"
+            },
+            {
+                "author": "Dr. Jason Fung",
+                "isPremium": 1,
+                "slug": "the-diabetes-code-prevent-and-reverse-type-2-diabetes-naturally",
+                "thumbnail_v2": "thumb_140_1604849745.png",
+                "title": "The Diabetes Code: Prevent and Reverse Type 2 Diabetes Naturally"
+            },
+            {
+                "author": "Anton Chekhov",
+                "isPremium": 0,
+                "slug": "the-bet",
+                "thumbnail_v2": "thumb_66_1604901220.png",
+                "title": " The Bet"
+            },
+            {
+                "author": "Bruce Patton, Douglas Stone, and Sheila Heen",
+                "isPremium": 0,
+                "slug": "difficult-conversations-how-to-discuss-what-matters-most",
+                "thumbnail_v2": "thumb_424_1612086496.png",
+                "title": " Difficult Conversations: How to Discuss What Matters Most"
+            },
+            {
+                "author": "Stephen Covey",
+                "isPremium": 0,
+                "slug": "the-7-habits-of-highly-effective-people",
+                "thumbnail_v2": "thumb_41_1606297447.png",
+                "title": "The 7 Habits of Highly Effective People"
+            },
+            {
+                "author": "Josh Kaufman",
+                "isPremium": 0,
+                "slug": "the-personal-mba-a-world-class-business-education-in-a-single-volume",
+                "thumbnail_v2": "thumb_202_1604861001.png",
+                "title": "The Personal MBA: A World-Class Business Education in a Single Volume"
+            }
+        ]
+    },
+    {
+        "image_v2": "None",
+        "name": "New Premium Summaries...",
+        "slug": "new-premium-summaries",
+        "top_books": [
+            {
+                "author": "Paramahansa Yogananda",
+                "isPremium": 1,
+                "slug": "full-book-yogi-kathaamrt-ek-yogi-ki-atmakatha",
+                "thumbnail_v2": "thumb_1205_1655584021.png",
+                "title": "(Full Book) Yogi Kathaamrt : Ek Yogi Ki Atmakatha"
+            },
+            {
+                "author": "Arnold Bennet",
+                "isPremium": 1,
+                "slug": "the-human-machine",
+                "thumbnail_v2": "thumb_1223.jpg",
+                "title": "The Human Machine"
+            },
+            {
+                "author": "Richard Templar",
+                "isPremium": 1,
+                "slug": "the-rules-of-work-a-definitive-code-for-personal-success",
+                "thumbnail_v2": "thumb_1222.png",
+                "title": "THE RULES OF WORK-A Definitive Code for Personal Success"
+            },
+            {
+                "author": "Joe Vitale",
+                "isPremium": 1,
+                "slug": "the-greatest-money-making-secret-in-history",
+                "thumbnail_v2": "thumb_1219.png",
+                "title": "THE GREATEST MONEY-MAKING SECRET IN HISTORY"
+            },
+            {
+                "author": "Subroto Bagchi",
+                "isPremium": 1,
+                "slug": "the-high-performance-entrepreneur",
+                "thumbnail_v2": "thumb_1218.png",
+                "title": "THE HIGH-PERFORMANCE ENTREPRENEUR"
+            },
+            {
+                "author": "German Muhlenberg",
+                "isPremium": 1,
+                "slug": "seduction-simplified-a-guide-to-develop-an-attractive-personality",
+                "thumbnail_v2": "thumb_1212.png",
+                "title": "SEDUCTION SIMPLIFIED -A Guide to Develop an Attractive Personality"
+            },
+            {
+                "author": "Dr. Michael Mosley",
+                "isPremium": 1,
+                "slug": "the-fast-diet-the-simple-secret-of-intermittent-fasting-lose-weight-stay-healthy-live-longer",
+                "thumbnail_v2": "thumb_1210.png",
+                "title": "THE FAST DIET -The Simple Secret of Intermittent Fasting: Lose Weight, Stay Healthy, Live Longer"
+            },
+            {
+                "author": "GIGL TEAM",
+                "isPremium": 1,
+                "slug": "charles-darwin-biography",
+                "thumbnail_v2": "thumb_1208.png",
+                "title": "CHARLES DARWIN BIOGRAPHY "
+            },
+            {
+                "author": "Jack Zufelt",
+                "isPremium": 1,
+                "slug": "the-dna-of-success",
+                "thumbnail_v2": "thumb_1203.png",
+                "title": "THE DNA OF SUCCESS"
+            },
+            {
+                "author": "Ryan Holiday",
+                "isPremium": 1,
+                "slug": "stillness-is-the-key",
+                "thumbnail_v2": "thumb_1201.png",
+                "title": "STILLNESS IS THE KEY"
+            },
+            {
+                "author": "Ian Tuhovsky",
+                "isPremium": 1,
+                "slug": "the-science-of-effective-communication",
+                "thumbnail_v2": "thumb_1199.png",
+                "title": "THE SCIENCE OF EFFECTIVE COMMUNICATION"
+            },
+            {
+                "author": "Larry Winget",
+                "isPremium": 1,
+                "slug": "youre-broke-because-you-want-to-be-how-to-stop-getting-by-and-start-getting-ahead",
+                "thumbnail_v2": "thumb_1130.png",
+                "title": "YOU’RE BROKE BECAUSE YOU WANT TO BE -How to Stop Getting By and Start Getting Ahead"
+            }
+        ]
+    },
+    {
+        "image_v2": "None",
+        "name": "Free Summaries",
+        "slug": "free-summaries",
+        "top_books": [
+            {
+                "author": "Michael Finke",
+                "isPremium": 0,
+                "slug": "money-management-skills",
+                "thumbnail_v2": "thumb_1217_1656735495.png",
+                "title": "Money Management Skills"
+            },
+            {
+                "author": "Daniel Pink",
+                "isPremium": 0,
+                "slug": "the-power-of-regret",
+                "thumbnail_v2": "thumb_1220.png",
+                "title": "THE POWER OF REGRET"
+            },
+            {
+                "author": "Sage Vyasa",
+                "isPremium": 0,
+                "slug": "bhagavad-gitachapter-1",
+                "thumbnail_v2": "thumb_594_1617520018.png",
+                "title": "Bhagavad Gita(Chapter 1)"
+            },
+            {
+                "author": "Jon Gordon and Mike Smith",
+                "isPremium": 0,
+                "slug": "you-win-in-the-locker-room-first-the-7-cs-to-build-a-winning-team-in-business-sports-and-life",
+                "thumbnail_v2": "thumb_1143_1651415952.png",
+                "title": "YOU WIN IN THE LOCKER ROOM FIRST-The 7 C’s to Build a Winning Team in Business, Sports, and Life"
+            },
+            {
+                "author": "James Allen",
+                "isPremium": 0,
+                "slug": "foundation-stones-to-happiness-and-success",
+                "thumbnail_v2": "thumb_v2605.png",
+                "title": "Foundation stones to happiness and success"
+            },
+            {
+                "author": "John C. Maxwell",
+                "isPremium": 0,
+                "slug": "failing-forward-turning-mistakes-into-stepping-stones-for-success",
+                "thumbnail_v2": "thumb_388_1609863551.png",
+                "title": "Failing Forward: Turning Mistakes Into Stepping Stones for Success"
+            },
+            {
+                "author": "Dale Carnegie)",
+                "isPremium": 0,
+                "slug": "the-quick-and-easy-way-to-effective-speaking",
+                "thumbnail_v2": "thumb_329_1606757551.png",
+                "title": "THE QUICK AND EASY WAY TO EFFECTIVE SPEAKING"
+            },
+            {
+                "author": "Rhonda Byrne",
+                "isPremium": 0,
+                "slug": "the-power",
+                "thumbnail_v2": "thumb_531_1614884559.png",
+                "title": "The Power"
+            },
+            {
+                "author": "A. P. J. Abdul Kalam and Arun Tiwari",
+                "isPremium": 0,
+                "slug": "wings-of-fire",
+                "thumbnail_v2": "thumb_v2577.png",
+                "title": "Wings of Fire.."
+            },
+            {
+                "author": "Rabindranath Tagore",
+                "isPremium": 0,
+                "slug": "ichha-purti",
+                "thumbnail_v2": "thumb_453_1612636146.png",
+                "title": "Ichha Purti"
+            },
+            {
+                "author": "Ravindra Nath Tagore",
+                "isPremium": 0,
+                "slug": "ghar-vapsi",
+                "thumbnail_v2": "thumb_460_1613063819.png",
+                "title": "GHAR VAPSI"
+            },
+            {
+                "author": "David Chilton",
+                "isPremium": 0,
+                "slug": "the-wealthy-barber-updated-3rd-edition-everyones-commonsense-guide-to-becoming-financially-independent",
+                "thumbnail_v2": "thumb_435_1612086650.png",
+                "title": "The Wealthy Barber, Updated 3rd Edition: Everyone's Commonsense Guide to Becoming Financially Independent"
+            }
+        ]
+    }
+]
