@@ -2,15 +2,18 @@ import '../styles/globals.css'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import BookState from './context/bookState'
+import AudioState from './context/audioState'
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <BookState>
     <Navbar />
+    <BookState>
+      <AudioState>
   <Component {...pageProps} />
-  <Footer/>
+      </AudioState>
   </BookState>
+  <Footer/>
   </>)
 }
 

@@ -11,7 +11,8 @@ import BookContext from ".././context/bookContext";
 import AudioParts from "../components/AudioParts";
 
 const book = (props) => {
-  console.log(props.bookData);
+  const bookData = props.bookData.url;
+  console.log(bookData);
   // getting user book
   const { getBook } = useContext(BookContext);
   const currentBook = getBook();
@@ -82,7 +83,9 @@ const book = (props) => {
           </div>
         </div>
       </div>
-      <AudioParts />
+      {bookData.map((data) => (
+        <AudioParts key={data.id} id={data.id} url={data.url} />
+      ))}
     </div>
   );
 };
@@ -106,7 +109,6 @@ export async function getServerSideProps(context) {
     }
   );
   const bookData = await respose.json();
-  console.log(bookData);
   return {
     props: { bookData }, // will be passed to the page component as props
   };
