@@ -1,5 +1,5 @@
 import React from "react";
-import Styles from "../styles/Book.module.css";
+import Styles from "../../styles/Book.module.css";
 import {
   TbPlayerSkipForward,
   TbPlayerSkipBack,
@@ -10,8 +10,7 @@ import { useRouter } from "next/router";
 
 const book = () => {
   const router = useRouter();
-  const { id } = router.query;
-  console.log(id);
+  console.log(router.query.book);
 
   return (
     <div className="w-full bg-slate-900">
