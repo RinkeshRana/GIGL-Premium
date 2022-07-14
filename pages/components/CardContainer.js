@@ -29,9 +29,11 @@ const CardContainer = (props) => {
           <div className="flex flex-wrap xl:justify-start justify-center m-4">
             {data.data.map((data) => (
               <Card
+                key={data.id}
                 thumbnailUrl={data.thumbnailUrl}
                 title={data.title}
                 subtitle={data.subtitle}
+                id={data.id}
               />
             ))}
           </div>
