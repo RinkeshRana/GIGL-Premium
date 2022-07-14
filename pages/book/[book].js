@@ -8,6 +8,7 @@ import {
 } from "react-icons/tb";
 import { useRouter } from "next/router";
 import BookContext from ".././context/bookContext";
+import AudioParts from "../components/AudioParts";
 
 const book = () => {
   // getting user book
@@ -16,8 +17,11 @@ const book = () => {
   console.log(currentBook);
 
   const router = useRouter();
-  const thumbnailUrl = currentBook.thumbnailUrl;
-  console.log(thumbnailUrl);
+  try {
+    const thumbnailUrl = currentBook.thumbnailUrl;
+    console.log(thumbnailUrl);
+  } catch (error) {}
+
   return (
     <div className="w-full bg-slate-900">
       <div className="h-2 bg-red-light"></div>
@@ -28,7 +32,7 @@ const book = () => {
         >
           <img
             className="w-full rounded block"
-            src={`${thumbnailUrl}`}
+            src={`${currentBook.thumbnailUrl}`}
             alt="Album Pic"
           />
           <div className="flex">
@@ -76,7 +80,13 @@ const book = () => {
             </div>
           </div>
         </div>
+        <div className=" ml-40 h-3/4 w-2/4 bg-slate-800 shadow-lg text-white overflow-auto ">
+          <div className="p-4 text-justify">
+            dangerouslySetInnerHTML={currentBook.description}
+          </div>
+        </div>
       </div>
+      <AudioParts />
     </div>
   );
 };

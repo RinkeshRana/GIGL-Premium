@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const bookState = (props) => {
 
-  const [book, setBook] = useState(null)
+  const [book, setBook] = useState({id : 0, title :"null", description: "null", thumbnailUrl: "null"})
 
   const getBook = () => {
     return book;
