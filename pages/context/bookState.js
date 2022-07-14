@@ -1,0 +1,34 @@
+import BookContext from "./bookContext";
+import { useState } from "react";
+
+const bookState = (props) => {
+
+  const [book, setBook] = useState(null)
+
+  const getBook = () => {
+    return book;
+  }
+
+  const setBookState = (id, title, description, thumbnailUrl) => {
+    setBook({
+      id,
+      title,
+      description,
+      thumbnailUrl,
+    });
+  }
+
+
+
+
+    // This will return functions that will be used to update the state
+    return (
+        <BookContext.Provider
+          value={{ getBook,setBookState }}
+        >
+          {props.children}
+        </BookContext.Provider>
+      );
+}
+
+export default bookState

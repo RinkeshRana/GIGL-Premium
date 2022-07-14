@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Styles from "../../styles/Book.module.css";
 import {
   TbPlayerSkipForward,
@@ -7,11 +7,17 @@ import {
   TbPlayerPause,
 } from "react-icons/tb";
 import { useRouter } from "next/router";
+import BookContext from ".././context/bookContext";
 
 const book = () => {
-  const router = useRouter();
-  console.log(router.query.book);
+  // getting user book
+  const { getBook } = useContext(BookContext);
+  const currentBook = getBook();
+  console.log(currentBook);
 
+  const router = useRouter();
+  const thumbnailUrl = currentBook.thumbnailUrl;
+  console.log(thumbnailUrl);
   return (
     <div className="w-full bg-slate-900">
       <div className="h-2 bg-red-light"></div>
@@ -22,16 +28,15 @@ const book = () => {
         >
           <img
             className="w-full rounded block"
-            src="https://images.greatideasgreatlife.com/thumbnails/thumb_530_1614884488.png"
+            src={`${thumbnailUrl}`}
             alt="Album Pic"
           />
           <div className="flex">
-            <div></div>
             <div className="w-full p-8">
               <div className="flex justify-between">
                 <div>
                   <h3 className="text-2xl font-bold text-white">
-                    Irresistable
+                    {currentBook.title}
                   </h3>
                 </div>
               </div>

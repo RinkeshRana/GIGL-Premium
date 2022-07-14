@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import Card from "./components/Card";
 
 export default function Home(props) {
- 
+
   return (
+    
     <div className="">
       <section className="text-gray-400 bg-gray-900 body-font">
         <div className="container px-5 py-10 mx-auto">
@@ -16,6 +17,7 @@ export default function Home(props) {
                 thumbnailUrl={data.thumbnailUrl}
                 title={data.title}
                 subtitle={data.subtitle}
+                description={data.shortDescription}
               />
             ))}
           </div>
