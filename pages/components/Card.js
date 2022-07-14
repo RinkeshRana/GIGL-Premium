@@ -9,7 +9,7 @@ const Card = (props) => {
 
   return (
     <div className="p-2  ">
-      <Link href={`/book/${id}`}>
+      <Link href={`/book/${props.id}`}>
         <div
           onClick={() => {
             setBookState(

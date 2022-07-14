@@ -10,17 +10,13 @@ import { useRouter } from "next/router";
 import BookContext from ".././context/bookContext";
 import AudioParts from "../components/AudioParts";
 
-const book = () => {
+const book = (props) => {
+  console.log(props.bookData);
   // getting user book
   const { getBook } = useContext(BookContext);
   const currentBook = getBook();
-  console.log(currentBook);
 
   const router = useRouter();
-  try {
-    const thumbnailUrl = currentBook.thumbnailUrl;
-    console.log(thumbnailUrl);
-  } catch (error) {}
 
   return (
     <div className="w-full bg-slate-900">
@@ -91,4 +87,28 @@ const book = () => {
   );
 };
 
+export async function getServerSideProps(context) {
+  const { book } = context.query;
+  if (book == "null") {
+    return {
+      props: { bookData: null }, // will be passed to the page component as props
+    };
+  }
+  const respose = await fetch(
+    `https://api.greatideasgreatlife.com/v3.5/books/surl/book/${book}`,
+    {
+      method: "get",
+      headers: new Headers({
+        Authorization:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMxNTU3ODYsImlhdCI6MTY1NTIxNjAxOH0.GF498DxzpSV6DTAz5anTYpsYfmxji_l3PlZwvUIBEUg",
+        Host: "api.greatideasgreatlife.com",
+      }),
+    }
+  );
+  const bookData = await respose.json();
+  console.log(bookData);
+  return {
+    props: { bookData }, // will be passed to the page component as props
+  };
+}
 export default book;
