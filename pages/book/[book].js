@@ -1,11 +1,5 @@
 import React, { useContext } from "react";
 import Styles from "../../styles/Book.module.css";
-import {
-  TbPlayerSkipForward,
-  TbPlayerSkipBack,
-  TbPlayerPlay,
-  TbPlayerPause,
-} from "react-icons/tb";
 import { useRouter } from "next/router";
 import BookContext from ".././context/bookContext";
 import AudioPlayerContext from ".././context/audioPlayerContext";
@@ -22,7 +16,7 @@ const book = (props) => {
     audioUrl[key] = bookData[key].url;
   }
   console.log(audioUrl);
-  setCurrentAudio(audioUrl[0]);
+  // setCurrentAudio(audioUrl[0]);
   // getting user book
   const currentBook = getBook();
 
@@ -53,7 +47,7 @@ const book = (props) => {
                 </div>
               </div>
               <div className="flex justify-between items-center mt-8">
-               <AudioPlayer/>
+               <AudioPlayer audioUrl={audioUrl} />
               </div>
             </div>
           </div>

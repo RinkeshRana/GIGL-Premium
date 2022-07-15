@@ -8,8 +8,11 @@ import {
 
 import AudioPlayerContext from ".././context/audioPlayerContext";
 
-const AudioPlayer = () => {
+const AudioPlayer = (props) => {
   const { currentAudio, setCurrentAudio } = useContext(AudioPlayerContext);
+  const audioUrl = props.audioUrl;
+  const [index, setIndex] = useState(0);
+  setCurrentAudio(audioUrl[index]);
   // state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -24,7 +27,11 @@ const AudioPlayer = () => {
     const seconds = Math.floor(audioPlayer.current.duration);
     setDuration(seconds);
     progressBar.current.max = seconds;
-  }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
+  }, [
+    audioPlayer?.current?.loadedmetadata,
+    audioPlayer?.current?.readyState,
+    audioPlayer?.current?.duration,
+  ]);
 
   const calculateTime = (secs) => {
     const minutes = Math.floor(secs / 60);
@@ -47,9 +54,13 @@ const AudioPlayer = () => {
   };
 
   const whilePlaying = () => {
-    progressBar.current.value = audioPlayer.current.currentTime;
-    changePlayerCurrentTime();
-    animationRef.current = requestAnimationFrame(whilePlaying);
+    if (audioPlayer.current === null) {
+      return;
+    } else {
+      progressBar.current.value = audioPlayer.current.currentTime;
+      changePlayerCurrentTime();
+      animationRef.current = requestAnimationFrame(whilePlaying);
+    }
   };
 
   const changeRange = () => {
@@ -65,14 +76,27 @@ const AudioPlayer = () => {
     setCurrentTime(progressBar.current.value);
   };
 
-  const backThirty = () => {
-    progressBar.current.value = Number(progressBar.current.value - 30);
-    changeRange();
+  const nextAudio = async () => {
+    progressBar.current.value = 0;
+    setIndex((index + 1) % audioUrl.length);
+    await setCurrentAudio(audioUrl[index]);
+    audioPlayer.current.play();
+    animationRef.current = requestAnimationFrame(whilePlaying);
+    audioPlayer.current.currentTime = 0;
+    animationRef.current = requestAnimationFrame(whilePlaying);
+    setIsPlaying(true);
   };
 
-  const forwardThirty = () => {
-    progressBar.current.value = Number(progressBar.current.value + 30);
-    changeRange();
+  const prevAudio = () => {
+    //whrite code to update state and chage audio index
+    if (index > 0) {
+      setIndex(index - 1);
+      setCurrentAudio(audioUrl[index - 1]);
+    } else {
+      setIndex(audioUrl.length - 1);
+      setCurrentAudio(audioUrl[audioUrl.length - 1]);
+    }
+    //end of code
   };
 
   return (
@@ -102,7 +126,7 @@ const AudioPlayer = () => {
       <div className="flex gap-5 mt-4 ">
         <audio src={currentAudio} ref={audioPlayer}></audio>
 
-        <button onClick={backThirty} className="text-white   text-center">
+        <button onClick={prevAudio} className="text-white   text-center">
           <TbPlayerSkipBack
             size={35}
             className="hover:cursor-pointer hover:scale-110"
@@ -122,7 +146,7 @@ const AudioPlayer = () => {
             />
           )}
         </button>
-        <button onClick={forwardThirty} className="text-white ml-8">
+        <button onClick={nextAudio} className="text-white ml-8">
           <TbPlayerSkipForward
             size={35}
             className="hover:cursor-pointer hover:scale-110"

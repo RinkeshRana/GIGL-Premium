@@ -3,7 +3,7 @@ import * as fs from 'fs';
 
 export default function handler(req, res) {
   console.log(req.query);
-  fs.readFile("pages/api/json/books/11.json",'utf-8',(err,data)=>{
+  fs.readFile("pages/api/json/books/12.json",'utf-8',(err,data)=>{
     console.log(err);
     res.status(200).json(JSON.parse(data))
   })
