@@ -8,16 +8,37 @@ import {
 } from "react-icons/tb";
 import { useRouter } from "next/router";
 import BookContext from ".././context/bookContext";
+import AudioPlayerContext from ".././context/audioPlayerContext";
 import AudioParts from "../components/AudioParts";
 
 const book = (props) => {
+  // audioUrl is the url of the all audio file
+  let audioUrl = [];
   const bookData = props.bookData.url;
-  console.log(bookData);
+  for (const key in bookData) {
+    audioUrl[key] = bookData[key].url;
+  }
+  console.log(audioUrl);
+
   // getting user book
   const { getBook } = useContext(BookContext);
+  const { play, togglePlay } = useContext(AudioPlayerContext);
   const currentBook = getBook();
 
   const router = useRouter();
+
+  const audioButton = () => {
+    console.log("play and pause audio.");
+    let audio = new Audio(audioUrl[0]);
+    if (!play) {
+      console.log("audiourl",audioUrl);
+      console.log("audiourl[0]", audioUrl[0]);
+      audio.play();
+    }else{
+      audio.pause()
+      audioUrl[0].pause;
+    }
+  };
 
   return (
     <div className="w-full bg-slate-900">
@@ -43,16 +64,26 @@ const book = (props) => {
               </div>
               <div className="flex justify-between items-center mt-8">
                 <div className="text-white">
-                  <TbPlayerSkipBack
-                    size={35}
-                    className="hover:cursor-pointer hover:scale-110"
-                  />
+                  <i>
+                    <TbPlayerSkipBack
+                      size={35}
+                      className="hover:cursor-pointer hover:scale-110"
+                    />
+                  </i>
                 </div>
                 <div className="text-white p-6 width={30} height={30} rounded-full bg-red-light shadow-lg">
-                  <TbPlayerPlay
-                    size={35}
-                    className="hover:cursor-pointer hover:scale-110"
-                  />
+                  <button onClick={togglePlay}>
+                    <TbPlayerPlay
+                      onClick={audioButton}
+                      size={35}
+                      className={`hover:cursor-pointer ${!play ? "hidden" : ""}  hover:scale-110`}
+                    />
+                    <TbPlayerPause
+                      onClick={audioButton}
+                      size={35}
+                      className={`hover:cursor-pointer ${play ? "hidden" : ""} hover:scale-110`}
+                    />
+                  </button>
                 </div>
                 <div className="text-white">
                   <TbPlayerSkipForward
@@ -77,9 +108,11 @@ const book = (props) => {
             </div>
           </div>
         </div>
-        <div className=" ml-40 h-3/4 w-2/4 bg-slate-800 shadow-lg text-white overflow-auto ">
+        <div className=" ml-40 h-3/4 w-2/4 bg-slate-800 hidden md:block shadow-lg rounded-lg text-white overflow-auto ">
           <div className="p-4 text-justify">
-            dangerouslySetInnerHTML={currentBook.description}
+            <div
+              dangerouslySetInnerHTML={{ __html: currentBook.description }}
+            />
           </div>
         </div>
       </div>
@@ -102,9 +135,9 @@ export async function getServerSideProps(context) {
     {
       method: "get",
       headers: new Headers({
+        Host: "api.greatideasgreatlife.com",
         Authorization:
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMxNTU3ODYsImlhdCI6MTY1NTIxNjAxOH0.GF498DxzpSV6DTAz5anTYpsYfmxji_l3PlZwvUIBEUg",
-        Host: "api.greatideasgreatlife.com",
       }),
     }
   );
