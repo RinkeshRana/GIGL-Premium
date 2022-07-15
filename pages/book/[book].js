@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import BookContext from ".././context/bookContext";
 import AudioPlayerContext from ".././context/audioPlayerContext";
 import AudioParts from "../components/AudioParts";
+import AudioPlayer from "../components/AudioPlayer";
 
 const book = (props) => {
   // audioUrl is the url of the all audio file
@@ -63,34 +64,7 @@ const book = (props) => {
                 </div>
               </div>
               <div className="flex justify-between items-center mt-8">
-                <div className="text-white">
-                  <i>
-                    <TbPlayerSkipBack
-                      size={35}
-                      className="hover:cursor-pointer hover:scale-110"
-                    />
-                  </i>
-                </div>
-                <div className="text-white p-6 width={30} height={30} rounded-full bg-red-light shadow-lg">
-                  <button onClick={togglePlay}>
-                    <TbPlayerPlay
-                      onClick={audioButton}
-                      size={35}
-                      className={`hover:cursor-pointer ${!play ? "hidden" : ""}  hover:scale-110`}
-                    />
-                    <TbPlayerPause
-                      onClick={audioButton}
-                      size={35}
-                      className={`hover:cursor-pointer ${play ? "hidden" : ""} hover:scale-110`}
-                    />
-                  </button>
-                </div>
-                <div className="text-white">
-                  <TbPlayerSkipForward
-                    size={35}
-                    className="hover:cursor-pointer hover:scale-110"
-                  />
-                </div>
+               <AudioPlayer/>
               </div>
             </div>
           </div>
