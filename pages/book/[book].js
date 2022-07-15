@@ -13,6 +13,8 @@ import AudioParts from "../components/AudioParts";
 import AudioPlayer from "../components/AudioPlayer";
 
 const book = (props) => {
+  const { getBook } = useContext(BookContext);
+  const { play, togglePlay, currentAudio, setCurrentAudio } = useContext(AudioPlayerContext);
   // audioUrl is the url of the all audio file
   let audioUrl = [];
   const bookData = props.bookData.url;
@@ -20,26 +22,13 @@ const book = (props) => {
     audioUrl[key] = bookData[key].url;
   }
   console.log(audioUrl);
-
+  setCurrentAudio(audioUrl[0]);
   // getting user book
-  const { getBook } = useContext(BookContext);
-  const { play, togglePlay } = useContext(AudioPlayerContext);
   const currentBook = getBook();
 
   const router = useRouter();
 
-  const audioButton = () => {
-    console.log("play and pause audio.");
-    let audio = new Audio(audioUrl[0]);
-    if (!play) {
-      console.log("audiourl",audioUrl);
-      console.log("audiourl[0]", audioUrl[0]);
-      audio.play();
-    }else{
-      audio.pause()
-      audioUrl[0].pause;
-    }
-  };
+  
 
   return (
     <div className="w-full bg-slate-900">
@@ -58,7 +47,7 @@ const book = (props) => {
             <div className="w-full p-8">
               <div className="flex justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="md:text-2xl font-bold text-sm text-white">
                     {currentBook.title}
                   </h3>
                 </div>
@@ -69,10 +58,7 @@ const book = (props) => {
             </div>
           </div>
           <div className="mx-8 py-4">
-            <div className="flex justify-between text-sm text-white">
-              <p>0:40</p>
-              <p>4:20</p>
-            </div>
+            
             <div className="mt-1">
               <div className="h-1 bg-grey-dark rounded-full">
                 <div className="w-1/5 h-1 bg-red-light rounded-full relative">

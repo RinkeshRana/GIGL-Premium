@@ -8,7 +8,7 @@ const Card = (props) => {
   const { setBookState } = useContext(BookContext);
 
   return (
-    <div className="p-2  ">
+    <div className="p-2 shadow-2xl ">
       <Link href={`/book/${props.id}`}>
         <div
           onClick={() => {
@@ -26,8 +26,8 @@ const Card = (props) => {
             src={props.thumbnailUrl}
             alt="blog"
           />
-          <div className="p-2 h-32 bg-yellow-100">
-            <h2 className="tracking-widest text-xs title-font font-medium text-gray-500 mb-1">
+          <div className="p-2 h-32 bg-slate-800">
+            <h2 className="tracking-widest text-xs title-font font-medium text-gray-200 mb-1">
               {props.title}
             </h2>
           </div>

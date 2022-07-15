@@ -8,11 +8,14 @@ const audioPlayerState = (props) => {
         setPlay(!play);
     }
 
+    const [currentAudio, setCurrentAudio] = useState("")
+
+
 
  
   // This will return functions that will be used to update the state
   return (
-    <AudioPlayerContext.Provider value={{ play, togglePlay }}>
+    <AudioPlayerContext.Provider value={{ play, togglePlay, currentAudio, setCurrentAudio }}>
       {props.children}
     </AudioPlayerContext.Provider>
   );
