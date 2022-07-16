@@ -8,17 +8,16 @@ const AudioParts = (props) => {
   const { currentAudio, setCurrentAudio, isAudioPlaying, setIsAudioPlaying } =
     useContext(AudioPlayerContext);
 
-  // console.log(props);
   const playAudio = () => {
-    let audio = new Audio(props.url);
     setCurrentAudio(props.url);
-    setIsAudioPlaying(!isAudioPlaying);
-    audio.play();
+    setIsAudioPlaying(false);
+    setCurrentAudio(props.url);
+    console.log(props.url);
   };
   const pauseAudio = () => {
-    let audio = new Audio(props.url);
-    setIsAudioPlaying(!isAudioPlaying);
-    audio.pause();
+    // let audio = new Audio(props.url);
+    setIsAudioPlaying(false);
+    // audio.pause();
   };
   return (
     <div>
@@ -28,14 +27,14 @@ const AudioParts = (props) => {
             props.index + 1
           }`}</div>
           <div className="text-white p-5 float-right ">
-            {currentAudio === props.url && isAudioPlaying ? (
+            {currentAudio === props.url ? (
               <IoMdPause
-                onClick={playAudio}
+                onClick={pauseAudio}
                 className="text-2xl hover:cursor-pointer"
               />
             ) : (
               <IoMdPlay
-                onClick={pauseAudio}
+                onClick={playAudio}
                 className="text-2xl hover:cursor-pointer"
               />
             )}

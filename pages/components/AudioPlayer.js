@@ -13,7 +13,10 @@ const AudioPlayer = (props) => {
     useContext(AudioPlayerContext);
   const audioUrl = props.audioUrl;
   const [index, setIndex] = useState(0);
-  setCurrentAudio(audioUrl[index]);
+
+  useEffect(() => {
+    setCurrentAudio(audioUrl[index]);
+  }, []);
 
   // state
   const [isPlaying, setIsPlaying] = useState(false);
@@ -34,9 +37,6 @@ const AudioPlayer = (props) => {
     audioPlayer?.current?.readyState,
     audioPlayer?.current?.duration,
   ]);
-  useEffect(() => {
-    console.log(currentAudio);
-  }, [currentPlaying]);
 
   const calculateTime = (secs) => {
     const minutes = Math.floor(secs / 60);
@@ -48,8 +48,8 @@ const AudioPlayer = (props) => {
 
   const togglePlayPause = () => {
     const prevValue = isPlaying;
-    setIsAudioPlaying(!isPlaying);
     setIsPlaying(!prevValue);
+    setIsAudioPlaying(!isPlaying);
 
     if (!prevValue) {
       audioPlayer.current.play();
@@ -59,6 +59,22 @@ const AudioPlayer = (props) => {
       cancelAnimationFrame(animationRef.current);
     }
   };
+  const changeAudio = () => {
+    const prevValue = isAudioPlaying;
+    setIsPlaying(!prevValue);
+    setIsAudioPlaying(!isPlaying);
+
+    if (!prevValue) {
+      audioPlayer.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying);
+    } else {
+      audioPlayer.current.pause();
+      cancelAnimationFrame(animationRef.current);
+    }
+  };
+  useEffect(() => {
+    changeAudio();
+  }, [currentAudio]);
 
   const whilePlaying = () => {
     if (audioPlayer.current === null) {
