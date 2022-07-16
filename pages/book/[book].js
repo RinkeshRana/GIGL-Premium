@@ -24,7 +24,7 @@ let index = 0
     <div className="w-full bg-slate-900">
       <div className="flex items-center justify-center h-screen bg-red-lightest">
         <div
-          className="bg-slate-800  w-60 shadow-lg rounded-lg"
+          className="bg-slate-800 mt-24 lg:mt-0  w-60 shadow-lg rounded-lg"
         >
           <img
             className="w-full  rounded "
@@ -63,7 +63,7 @@ let index = 0
           </div>
         </div>
       </div>
-        <div className=" mx-auto h-96 w-4/5 bg-slate-800  block lg:hidden shadow-lg rounded-lg text-white overflow-auto ">
+        <div className=" mx-auto h-96 w-4/5 bg-slate-800 mt-24 block lg:hidden shadow-lg rounded-lg text-white overflow-auto ">
           <div className="p-4 text-justify">
             <div
               dangerouslySetInnerHTML={{ __html: currentBook.description }}

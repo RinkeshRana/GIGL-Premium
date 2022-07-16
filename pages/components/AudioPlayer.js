@@ -135,7 +135,7 @@ const AudioPlayer = (props) => {
   return (
     <div className="flex flex-wrap w-64 justify-center -ml-8">
       <div className="flex w-auto justify-center ml-7">
-        <div className="text-white w-12 ml-1">{calculateTime(currentTime)}</div>
+        <div className="text-white w-14 ">{calculateTime(currentTime)}</div>
 
         {/* progressbar */}
         <div>
@@ -146,7 +146,7 @@ const AudioPlayer = (props) => {
             defaultValue="0"
             ref={progressBar}
             onChange={changeRange}
-            className="text-white hover:cursor-grab hover:scale-110"
+            className="text-white hover:cursor-grab -ml-4 mt-1 hover:scale-110"
           />
         </div>
 
