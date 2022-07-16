@@ -9,17 +9,23 @@ import {
 import AudioPlayerContext from ".././context/audioPlayerContext";
 
 const AudioPlayer = (props) => {
-  const { currentAudio, setCurrentAudio, isAudioPlaying, setIsAudioPlaying } =
-    useContext(AudioPlayerContext);
+  const {
+    currentAudio,
+    setCurrentAudio,
+    isAudioPlaying,
+    setIsAudioPlaying,
+    setIsPlaying,
+    isPlaying,
+  } = useContext(AudioPlayerContext);
   const audioUrl = props.audioUrl;
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     setCurrentAudio(audioUrl[index]);
+    setIndex(index + 1);
   }, []);
 
   // state
-  const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [currentPlaying, setCurrentPlaying] = useState(currentAudio);
@@ -47,9 +53,8 @@ const AudioPlayer = (props) => {
   };
 
   const togglePlayPause = () => {
-    const prevValue = isPlaying;
-    setIsPlaying(!prevValue);
-    setIsAudioPlaying(!isPlaying);
+    const prevValue = isAudioPlaying;
+    setIsAudioPlaying(!prevValue);
 
     if (!prevValue) {
       audioPlayer.current.play();
@@ -59,10 +64,10 @@ const AudioPlayer = (props) => {
       cancelAnimationFrame(animationRef.current);
     }
   };
+
   const changeAudio = () => {
-    const prevValue = isAudioPlaying;
-    setIsPlaying(!prevValue);
-    setIsAudioPlaying(!isPlaying);
+    const prevValue = false;
+    setIsAudioPlaying(true);
 
     if (!prevValue) {
       audioPlayer.current.play();
@@ -101,7 +106,7 @@ const AudioPlayer = (props) => {
 
   const nextAudio = async () => {
     //write code to play next audio
-    if (index < audioUrl.length - 1) {
+    if (index < audioUrl.length) {
       setIndex(index + 1);
       progressBar.current.value = 0;
       await setCurrentAudio(audioUrl[index]);
@@ -110,7 +115,6 @@ const AudioPlayer = (props) => {
       animationRef.current = requestAnimationFrame(whilePlaying);
       audioPlayer.current.currentTime = 0;
       animationRef.current = requestAnimationFrame(whilePlaying);
-      setIsPlaying(true);
       setIsAudioPlaying(true);
     }
 
@@ -125,7 +129,6 @@ const AudioPlayer = (props) => {
     animationRef.current = requestAnimationFrame(whilePlaying);
     audioPlayer.current.currentTime = 0;
     animationRef.current = requestAnimationFrame(whilePlaying);
-    setIsPlaying(true);
     setIsAudioPlaying(true);
   };
 
@@ -143,7 +146,7 @@ const AudioPlayer = (props) => {
             defaultValue="0"
             ref={progressBar}
             onChange={changeRange}
-            className="text-white"
+            className="text-white hover:scale-110"
           />
         </div>
 
@@ -164,7 +167,7 @@ const AudioPlayer = (props) => {
         </button>
         <button onClick={togglePlayPause} className="text-white ml-8">
           {" "}
-          {isPlaying ? (
+          {isAudioPlaying ? (
             <TbPlayerPause
               size={35}
               className="hover:cursor-pointer hover:scale-110"
