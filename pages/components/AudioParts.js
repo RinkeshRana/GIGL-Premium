@@ -20,13 +20,13 @@ const AudioParts = (props) => {
           <div className="p-6 text-2xl font-bold">{`Part ${
             props.index + 1
           }`}</div>
-          <div className="text-white p-5  float-right ">
+          <div className="text-white p-5   float-right ">
             {currentAudio === props.url ? (
-              <IoMdPause className="text-2xl hover:cursor-no-drop disabled:opacity-75 " />
+              <IoMdPause className="text-2xl hover:cursor-no-drop hover:scale-110 disabled:opacity-75 " />
             ) : (
               <IoMdPlay
                 onClick={playAudio}
-                className="text-2xl hover:cursor-pointer"
+                className="text-2xl hover:scale-110 hover:cursor-pointer"
               />
             )}
           </div>

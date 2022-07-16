@@ -146,7 +146,7 @@ const AudioPlayer = (props) => {
             defaultValue="0"
             ref={progressBar}
             onChange={changeRange}
-            className="text-white hover:scale-110"
+            className="text-white hover:cursor-grab hover:scale-110"
           />
         </div>
 
@@ -156,7 +156,7 @@ const AudioPlayer = (props) => {
         </div>
       </div>
 
-      <div className="flex gap-5 mt-4 ">
+      <div className="flex gap-5 mt-4 -ml-4">
         <audio src={currentAudio} ref={audioPlayer}></audio>
 
         <button onClick={prevAudio} className="text-white   text-center">

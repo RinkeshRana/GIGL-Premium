@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import BookContext from "../context/bookContext";
+import Image from "next/image";
 
 const Card = (props) => {
-  // console.log(props);
-  const id = props.id;
   const { setBookState } = useContext(BookContext);
 
   return (
@@ -21,11 +20,14 @@ const Card = (props) => {
           }}
           className="h-96 hover:cursor-pointer hover:scale-110   w-40 border-2 border-gray-800 rounded-lg overflow-hidden"
         >
-          <img
+          <div className="lg:h-64  md:h-50 w-65  object-cover object-center">
+            <Image src={props.thumbnailUrl}   alt={props.title} width={500} height={820} />
+          </div>
+          {/* <img
             className="lg:h-64  md:h-50 w-65  object-cover object-center"
             src={props.thumbnailUrl}
             alt="blog"
-          />
+          /> */}
           <div className="p-2 h-32 bg-slate-800">
             <h2 className="tracking-widest text-xs title-font font-medium text-gray-200 mb-1">
               {props.title}

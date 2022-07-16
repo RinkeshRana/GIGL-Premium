@@ -8,7 +8,7 @@ import AudioPlayer from "../components/AudioPlayer";
 
 const book = (props) => {
   const { getBook } = useContext(BookContext);
-  const { play, togglePlay, currentAudio, setCurrentAudio } = useContext(AudioPlayerContext);
+
   // audioUrl is the url of the all audio file
   let audioUrl = [];
   const bookData = props.bookData.url;
@@ -24,16 +24,14 @@ const book = (props) => {
 let index = 0
   return (
     <div className="w-full bg-slate-900">
-      <div className="h-2 bg-red-light"></div>
       <div className="flex items-center justify-center h-screen bg-red-lightest">
         <div
-          className="bg-slate-800 w-64  shadow-lg rounded-lg"
+          className="bg-slate-800  w-60   shadow-lg rounded-lg"
           style={Styles.book}
         >
           <img
-            className="w-full rounded block"
+            className="w-full  rounded "
             src={`${currentBook.thumbnailUrl}`}
-            alt="Album Pic"
           />
           <div className="flex">
             <div className="w-full p-8">
