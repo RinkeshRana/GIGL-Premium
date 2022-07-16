@@ -5,7 +5,7 @@ export default function Home(props) {
   return (
     <div className="">
       <section className="text-gray-400 bg-gray-900 body-font">
-        <div className="px-2 py-10 mx-auto">
+        <div className="px-6 py-10 mx-auto">
           <h1 className="text-xl md:text-3xl font-bold ">BHAGWAD GEETA</h1>
           <div className="flex flex-wrap justify-center xl:justify-start m-4">
             {props.allBooks.data.map((data) => (
@@ -14,7 +14,7 @@ export default function Home(props) {
                 id={data.id}
                 thumbnailUrl={data.thumbnailUrl}
                 title={data.title}
-                description={data.description}
+                description={data.shortDescription}
               />
             ))}
           </div>
