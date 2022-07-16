@@ -9,10 +9,12 @@ import {
 import AudioPlayerContext from ".././context/audioPlayerContext";
 
 const AudioPlayer = (props) => {
-  const { currentAudio, setCurrentAudio } = useContext(AudioPlayerContext);
+  const { currentAudio, setCurrentAudio, isAudioPlaying, setIsAudioPlaying } =
+    useContext(AudioPlayerContext);
   const audioUrl = props.audioUrl;
   const [index, setIndex] = useState(0);
   setCurrentAudio(audioUrl[index]);
+
   // state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -46,7 +48,9 @@ const AudioPlayer = (props) => {
 
   const togglePlayPause = () => {
     const prevValue = isPlaying;
+    setIsAudioPlaying(!isPlaying);
     setIsPlaying(!prevValue);
+
     if (!prevValue) {
       audioPlayer.current.play();
       animationRef.current = requestAnimationFrame(whilePlaying);
@@ -91,6 +95,7 @@ const AudioPlayer = (props) => {
       audioPlayer.current.currentTime = 0;
       animationRef.current = requestAnimationFrame(whilePlaying);
       setIsPlaying(true);
+      setIsAudioPlaying(true);
     }
 
     // setIndex((index + 1) % audioUrl.length);
@@ -105,6 +110,7 @@ const AudioPlayer = (props) => {
     audioPlayer.current.currentTime = 0;
     animationRef.current = requestAnimationFrame(whilePlaying);
     setIsPlaying(true);
+    setIsAudioPlaying(true);
   };
 
   return (
