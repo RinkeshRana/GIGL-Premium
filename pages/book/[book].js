@@ -15,15 +15,13 @@ const book = (props) => {
   for (const key in bookData) {
     audioUrl[key] = bookData[key].url;
   }
-  console.log(audioUrl);
   // setCurrentAudio(audioUrl[0]);
   // getting user book
   const currentBook = getBook();
 
   const router = useRouter();
-
   
-
+let index = 0
   return (
     <div className="w-full bg-slate-900">
       <div className="h-2 bg-red-light"></div>
@@ -41,7 +39,7 @@ const book = (props) => {
             <div className="w-full p-8">
               <div className="flex justify-between">
                 <div>
-                  <h3 className="md:text-2xl font-bold text-sm text-white">
+                  <h3 className="md:text-l font-bold text-sm text-white">
                     {currentBook.title}
                   </h3>
                 </div>
@@ -70,9 +68,11 @@ const book = (props) => {
           </div>
         </div>
       </div>
-      {bookData.map((data) => (
-        <AudioParts key={data.id} id={data.id} url={data.url} />
-      ))}
+      {bookData.map((data, index) => (
+        <AudioParts key={data.id} index={index} id={data.id} url={data.url}  />
+      ) 
+      )
+      }
     </div>
   );
 };

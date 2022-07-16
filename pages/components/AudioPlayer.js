@@ -17,7 +17,7 @@ const AudioPlayer = (props) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
-
+  const [currentPlaying, setCurrentPlaying] = useState(currentAudio);
   // references
   const audioPlayer = useRef(); // reference our audio component
   const progressBar = useRef(); // reference our progress bar
@@ -32,6 +32,9 @@ const AudioPlayer = (props) => {
     audioPlayer?.current?.readyState,
     audioPlayer?.current?.duration,
   ]);
+  useEffect(() => {
+    console.log(currentAudio);
+  }, [currentPlaying]);
 
   const calculateTime = (secs) => {
     const minutes = Math.floor(secs / 60);
@@ -77,26 +80,31 @@ const AudioPlayer = (props) => {
   };
 
   const nextAudio = async () => {
+    //write code to play next audio
+    if (index < audioUrl.length - 1) {
+      setIndex(index + 1);
+      progressBar.current.value = 0;
+      await setCurrentAudio(audioUrl[index]);
+      setCurrentPlaying(currentAudio);
+      audioPlayer.current.play();
+      animationRef.current = requestAnimationFrame(whilePlaying);
+      audioPlayer.current.currentTime = 0;
+      animationRef.current = requestAnimationFrame(whilePlaying);
+      setIsPlaying(true);
+    }
+
+    // setIndex((index + 1) % audioUrl.length);
+  };
+
+  const prevAudio = async () => {
     progressBar.current.value = 0;
-    setIndex((index + 1) % audioUrl.length);
+    setIndex((index - 1) % audioUrl.length);
     await setCurrentAudio(audioUrl[index]);
     audioPlayer.current.play();
     animationRef.current = requestAnimationFrame(whilePlaying);
     audioPlayer.current.currentTime = 0;
     animationRef.current = requestAnimationFrame(whilePlaying);
     setIsPlaying(true);
-  };
-
-  const prevAudio = () => {
-    //whrite code to update state and chage audio index
-    if (index > 0) {
-      setIndex(index - 1);
-      setCurrentAudio(audioUrl[index - 1]);
-    } else {
-      setIndex(audioUrl.length - 1);
-      setCurrentAudio(audioUrl[audioUrl.length - 1]);
-    }
-    //end of code
   };
 
   return (
