@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
-import Styles from "../../styles/Book.module.css";
 import { useRouter } from "next/router";
 import BookContext from ".././context/bookContext";
-import AudioPlayerContext from ".././context/audioPlayerContext";
 import AudioParts from "../components/AudioParts";
 import AudioPlayer from "../components/AudioPlayer";
 
@@ -26,8 +24,7 @@ let index = 0
     <div className="w-full bg-slate-900">
       <div className="flex items-center justify-center h-screen bg-red-lightest">
         <div
-          className="bg-slate-800  w-60   shadow-lg rounded-lg"
-          style={Styles.book}
+          className="bg-slate-800  w-60 shadow-lg rounded-lg"
         >
           <img
             className="w-full  rounded "
@@ -58,7 +55,7 @@ let index = 0
             </div>
           </div>
         </div>
-        <div className=" ml-40 h-3/4 w-2/4 bg-slate-800 hidden md:block shadow-lg rounded-lg text-white overflow-auto ">
+        <div className=" ml-40 h-3/4 w-2/4 bg-slate-800 hidden lg:block shadow-lg rounded-lg text-white overflow-auto ">
           <div className="p-4 text-justify">
             <div
               dangerouslySetInnerHTML={{ __html: currentBook.description }}
@@ -66,11 +63,20 @@ let index = 0
           </div>
         </div>
       </div>
+        <div className=" mx-auto h-96 w-4/5 bg-slate-800  block lg:hidden shadow-lg rounded-lg text-white overflow-auto ">
+          <div className="p-4 text-justify">
+            <div
+              dangerouslySetInnerHTML={{ __html: currentBook.description }}
+            />
+          </div>
+        </div>
+      <div>
       {bookData.map((data, index) => (
         <AudioParts key={data.id} index={index} id={data.id} url={data.url}  />
       ) 
       )
       }
+      </div>
     </div>
   );
 };

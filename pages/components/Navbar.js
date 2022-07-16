@@ -6,18 +6,15 @@ const Navbar = () => {
       <nav className="flex items-center justify-between  bg-slate-800  shadow-2xl flex-wrap p-6">
         <div className="flex items-center flex-shrink-0 shadow-2xl text-white mr-6">
           <img
-            className="fill-current h-8 w-8 mr-2"
-            width="54"
-            height="54"
-            viewBox="0 0 54 54"
+            className="fill-current h-5 w-5 md:h-8 md:w-8 mr-2 "
             src="https://www.greatideasgreatlife.com/static/images/logo.png"
           />
-          <span className="font-semibold text-xl tracking-tight">
+          <span className="font-semibold text-xs md:text-xl tracking-tight">
             Great Ideas Great Life
           </span>
         </div>
         <div className="block lg:hidden">
-          <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+          <button className="flex items-center px-2 py-1 sm:px-3 sm:py-2 border rounded text-slate-200 border-slate-400 hover:text-white hover:border-white">
             <svg
               className="fill-current h-3 w-3"
               viewBox="0 0 20 20"
