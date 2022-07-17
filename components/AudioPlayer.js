@@ -6,7 +6,7 @@ import {
   TbPlayerPause,
 } from "react-icons/tb";
 
-import AudioPlayerContext from "../context/audioPlayerContext";
+import AudioPlayerContext from "../context/AudioPlayerContext";
 
 const AudioPlayer = (props) => {
   const {

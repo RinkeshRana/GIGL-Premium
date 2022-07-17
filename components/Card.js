@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Link from "next/link";
-import BookContext from "../context/bookContext";
+import BookContext from "../context/BookContext";
 import Image from "next/image";
 
 const Card = (props) => {

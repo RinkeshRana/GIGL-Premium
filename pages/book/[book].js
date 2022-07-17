@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
-import BookContext from "../../context/bookContext";
+import BookContext from "../../context/BookContext";
 import AudioParts from "../../components/AudioParts";
 import AudioPlayer from "../../components/AudioPlayer";
 import Head from "next/head";
@@ -9,7 +9,6 @@ const Book = (props) => {
   const router = useRouter();
 
   const { getBook } = useContext(BookContext);
-
   // audioUrl is the url of the all audio file
   let audioUrl = [];
   const bookData = props.bookData.url;
