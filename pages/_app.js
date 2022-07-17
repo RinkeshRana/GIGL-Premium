@@ -2,9 +2,9 @@ import "../styles/globals.css";
 import React, { useState, useEffect } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
-import BookState from "../context/bookState";
+import BookState from "../context/BookState";
 import AudioState from "../context/AudioState";
-import AudioPlayerState from "../context/audioPlayerState";
+import AudioPlayerState from "../context/AudioPlayerState";
 import LoadingBar from "react-top-loading-bar";
 import { useRouter } from "next/router";
 
