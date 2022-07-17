@@ -81,7 +81,7 @@ export default function Home(props) {
 export async function getServerSideProps(context) {
   let data;
   try {
-    data = await fetch("http://localhost:3000/api/fetchBooks?bookid=topbooks");
+    data = await fetch("https://gigl-premium-r5uje2ntb-rinkeshrana.vercel.app/api/fetchBooks?bookid=topbooks");
   } catch (error) {}
 
   let allBooks = await data.json();
