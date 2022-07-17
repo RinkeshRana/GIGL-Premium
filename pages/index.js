@@ -19,7 +19,6 @@ export default function Home(props) {
       setHasMore(false);
     }
   };
-
   return (
     <div className="">
       <Head>
@@ -79,12 +78,9 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(context) {
-  let data;
-  try {
-    data = await fetch("www.greatideasgreatlife.tk/api/fetchBooks?bookid=topbooks");
-  } catch (error) {}
-
-  let allBooks = await data.json();
+const data = await fetch("http://localhost:3000/api/fetchBooks?bookid=topbooks");
+  
+let allBooks = await data.json();
   return {
     props: { allBooks }, // will be passed to the page component as props
   };
