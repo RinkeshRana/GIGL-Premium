@@ -7,7 +7,8 @@ const nextConfig = {
 module.exports = nextConfig;
 
 module.exports = {
+  distDir: 'build',
   images: {
-    domains: ["images.greatideasgreatlife.com"],
+    domains: ["images.greatideasgreatlife.com","www.greatideasgreatlife.com"],
   },
 };

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Card from "./components/Card";
+import Card from "../components/Card";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Head from "next/head";
 
@@ -79,9 +79,11 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(context) {
-  let data = await fetch(
-    "http://localhost:3000/api/fetchBooks?bookid=topbooks"
-  );
+  let data;
+  try {
+    data = await fetch("http://localhost:3000/api/fetchBooks?bookid=topbooks");
+  } catch (error) {}
+
   let allBooks = await data.json();
   return {
     props: { allBooks }, // will be passed to the page component as props

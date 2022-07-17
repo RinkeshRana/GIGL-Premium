@@ -1,7 +1,7 @@
 import AudioPlayerContext from "./audioPlayerContext";
 import { useState } from "react";
 
-const audioPlayerState = (props) => {
+const AudioPlayerState = (props) => {
   const [currentAudio, setCurrentAudio] = useState("");
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   // This will return functions that will be used to update the state
@@ -19,4 +19,4 @@ const audioPlayerState = (props) => {
   );
 };
 
-export default audioPlayerState;
+export default AudioPlayerState;

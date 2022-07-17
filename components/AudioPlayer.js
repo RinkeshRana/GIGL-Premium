@@ -14,8 +14,6 @@ const AudioPlayer = (props) => {
     setCurrentAudio,
     isAudioPlaying,
     setIsAudioPlaying,
-    setIsPlaying,
-    isPlaying,
   } = useContext(AudioPlayerContext);
   const audioUrl = props.audioUrl;
   const [index, setIndex] = useState(0);

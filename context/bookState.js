@@ -1,7 +1,7 @@
 import BookContext from "./bookContext";
 import { useState } from "react";
 
-const bookState = (props) => {
+const BookState = (props) => {
 
   const [book, setBook] = useState({id : 0, title :"null", description: "null", thumbnailUrl: "null"})
 
@@ -31,4 +31,4 @@ const bookState = (props) => {
       );
 }
 
-export default bookState
+export default BookState

@@ -1,12 +1,12 @@
 import React from "react";
-
+import Image from "next/image";
 const Footer = () => {
   return (
     <div>
       <footer className="text-gray-400 bg-gray-900 body-font">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <a className="flex title-font font-medium items-center md:justify-start justify-center text-white">
-            <img src="https://www.greatideasgreatlife.com/static/images/logo.png" className="h-9"/>
+            <Image src='https://www.greatideasgreatlife.com/static/images/logo.png' height={30} width={30}  />
             <span className="ml-3 text-xl">Great Ideas Great Life</span>
           </a>
           <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">

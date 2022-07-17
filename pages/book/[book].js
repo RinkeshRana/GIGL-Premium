@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
-import BookContext from ".././context/bookContext";
-import AudioParts from "../components/AudioParts";
-import AudioPlayer from "../components/AudioPlayer";
+import BookContext from "../../context/bookContext";
+import AudioParts from "../../components/AudioParts";
+import AudioPlayer from "../../components/AudioPlayer";
 import Head from "next/head";
 
-const book = (props) => {
+const Book = (props) => {
   const router = useRouter();
 
   const { getBook } = useContext(BookContext);
@@ -30,7 +30,7 @@ const book = (props) => {
     <div className="w-full bg-slate-900">
       <Head>
         <meta charSet="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>:: Welcome to GIGL ::</title>
         <meta
@@ -92,11 +92,11 @@ const book = (props) => {
 
 export async function getServerSideProps(context) {
   const { book } = context.query;
-  if (book == "null") {
-    return {
-      props: { bookData: null }, // will be passed to the page component as props
-    };
-  }
+  // if (book == "null") {
+  //   return {
+  //     props: { bookData: null }, // will be passed to the page component as props
+  //   };
+  // }
   const respose = await fetch(
     `https://api.greatideasgreatlife.com/v3.5/books/surl/book/${book}`,
     {
@@ -113,4 +113,4 @@ export async function getServerSideProps(context) {
     props: { bookData }, // will be passed to the page component as props
   };
 }
-export default book;
+export default Book;

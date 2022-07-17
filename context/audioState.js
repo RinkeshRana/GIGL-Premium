@@ -1,7 +1,7 @@
 import AudioContext from "./audioContext";
 import { useState } from "react";
 
-const audioState = (props) => {
+const AudioState = (props) => {
   const [conuter, setCounter] = useState(1);
 
   const getCounter = () => {
@@ -20,4 +20,4 @@ const audioState = (props) => {
   );
 };
 
-export default audioState;
+export default AudioState;
