@@ -1,4 +1,4 @@
-import AudioContext from "./audioContext";
+import AudioContext from "./AudioContext";
 import { useState } from "react";
 
 const AudioState = (props) => {

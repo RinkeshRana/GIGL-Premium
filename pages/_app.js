@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import BookState from "../context/bookState";
-import AudioState from "../context/audioState";
+import AudioState from "../context/AudioState";
 import AudioPlayerState from "../context/audioPlayerState";
 import LoadingBar from "react-top-loading-bar";
 import { useRouter } from "next/router";
