@@ -78,7 +78,7 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps(context) {
-const data = await fetch("http://localhost:3000/api/fetchBooks?bookid=topbooks");
+const data = await fetch("https://www.greatideasgreatlife.tk/api/fetchBooks?bookid=topbooks");
   
 let allBooks = await data.json();
   return {
