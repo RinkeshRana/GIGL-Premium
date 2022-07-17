@@ -1,10 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import BookContext from ".././context/bookContext";
 import AudioParts from "../components/AudioParts";
 import AudioPlayer from "../components/AudioPlayer";
+import Head from "next/head";
 
 const book = (props) => {
+  const router = useRouter();
+
   const { getBook } = useContext(BookContext);
 
   // audioUrl is the url of the all audio file
@@ -17,15 +20,26 @@ const book = (props) => {
   // getting user book
   const currentBook = getBook();
 
-  const router = useRouter();
-  
-let index = 0
+  useEffect(() => {
+    if (currentBook.id === 0) {
+      router.push("/");
+    }
+  }, []);
+
   return (
     <div className="w-full bg-slate-900">
+      <Head>
+        <meta charSet="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>:: Welcome to GIGL ::</title>
+        <meta
+          name="facebook-domain-verification"
+          content="61vbivju4za5lh5htup9kodzt22dtd"
+        />
+      </Head>
       <div className="flex items-center justify-center h-screen bg-red-lightest">
-        <div
-          className="bg-slate-800 mt-24 lg:mt-0  w-60 shadow-lg rounded-lg"
-        >
+        <div className="bg-slate-800 mt-24 lg:mt-0  w-60 shadow-lg rounded-lg">
           <img
             className="w-full  rounded "
             src={`${currentBook.thumbnailUrl}`}
@@ -40,12 +54,11 @@ let index = 0
                 </div>
               </div>
               <div className="flex justify-between items-center mt-8">
-               <AudioPlayer audioUrl={audioUrl} />
+                <AudioPlayer audioUrl={audioUrl} />
               </div>
             </div>
           </div>
           <div className="mx-8 py-4">
-            
             <div className="mt-1">
               <div className="h-1 bg-grey-dark rounded-full">
                 <div className="w-1/5 h-1 bg-red-light rounded-full relative">
@@ -63,19 +76,15 @@ let index = 0
           </div>
         </div>
       </div>
-        <div className=" mx-auto h-96 w-4/5 bg-slate-800 mt-24 block lg:hidden shadow-lg rounded-lg text-white overflow-auto ">
-          <div className="p-4 text-justify">
-            <div
-              dangerouslySetInnerHTML={{ __html: currentBook.description }}
-            />
-          </div>
+      <div className=" mx-auto h-96 w-4/5 bg-slate-800 mt-24 block lg:hidden shadow-lg rounded-lg text-white overflow-auto ">
+        <div className="p-4 text-justify">
+          <div dangerouslySetInnerHTML={{ __html: currentBook.description }} />
         </div>
+      </div>
       <div>
-      {bookData.map((data, index) => (
-        <AudioParts key={data.id} index={index} id={data.id} url={data.url}  />
-      ) 
-      )
-      }
+        {bookData.map((data, index) => (
+          <AudioParts key={data.id} index={index} id={data.id} url={data.url} />
+        ))}
       </div>
     </div>
   );

@@ -11,7 +11,6 @@ const AudioParts = (props) => {
   const playAudio = () => {
     setCurrentAudio(props.url);
     setIsAudioPlaying(true);
-    console.log(props.url);
   };
   return (
     <div>

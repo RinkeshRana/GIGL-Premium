@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [showMe, setShowMe] = useState(true);
+  const [showMe, setShowMe] = useState(false);
   function toggle() {
     setShowMe(!showMe);
   }
@@ -57,18 +57,20 @@ const Navbar = () => {
             </Link>
           </div>
           <div>
+            <Link href="/">
             <a
-              href="#"
+              
               className="inline-block  px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent text-xs lg:text-sm hover:text-black hover:bg-white mt-4 lg:mt-0"
             >
               Login
-            </a>
+            </a></Link>
+            <Link href="/">
             <a
               href="#"
               className="ml-2 inline-block  px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent text-xs lg:text-sm hover:text-black hover:bg-white mt-4 lg:mt-0"
             >
               Signup
-            </a>
+            </a></Link>
           </div>
         </div>
       </nav>
