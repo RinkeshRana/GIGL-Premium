@@ -23,11 +23,6 @@ const Card = (props) => {
           <div className="lg:h-64  md:h-50 w-65  object-cover object-center">
             <Image src={props.thumbnailUrl}   alt={props.title} width={500} height={820} />
           </div>
-          {/* <img
-            className="lg:h-64  md:h-50 w-65  object-cover object-center"
-            src={props.thumbnailUrl}
-            alt="blog"
-          /> */}
           <div className="p-2 h-32 bg-slate-800">
             <h2 className="tracking-widest text-xs title-font font-medium text-gray-200 mb-1">
               {props.title}

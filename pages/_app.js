@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import React, { useState, useEffect } from "react";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 import BookState from "../context/bookState";
 import AudioState from "../context/audioState";
 import AudioPlayerState from "../context/audioPlayerState";

@@ -1,11 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { IoMdPlay, IoMdPause } from "react-icons/io";
-import AudioContext from "../context/audioContext";
 import AudioPlayerContext from "../context/audioPlayerContext";
 
 const AudioParts = (props) => {
-  const { getCounter, setNextCounter } = useContext(AudioContext);
-  const { currentAudio, setCurrentAudio, isAudioPlaying, setIsAudioPlaying } =
+  const { currentAudio, setCurrentAudio, setIsAudioPlaying } =
     useContext(AudioPlayerContext);
 
   const playAudio = () => {
