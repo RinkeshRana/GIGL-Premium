@@ -1,11 +1,11 @@
 import React from 'react'
 
-const login = () => {
+const singup = () => {
   return (
     <div className='h-screen items-center bg-slate-900 text-white text-2xl text-center'>
-        Temporary Unavailable
-  </div>
+      Temporary Unavailable
+    </div>
   )
 }
 
-export default login
+export default singup
