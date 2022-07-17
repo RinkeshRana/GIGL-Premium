@@ -22,6 +22,7 @@ export default function Home(props) {
   return (
     <div className="">
       <Head>
+      <meta name="google-site-verification" content="zi0GnqR3DgajRQMsAfOpKzjtCj7mgwhMiEBfaXwwz5Y" />
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
