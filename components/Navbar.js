@@ -15,10 +15,6 @@ const Navbar = () => {
             <div className="fill-current h-5 w-5 md:h-8 md:w-8 mr-2 hover:cursor-pointer">
               <Image src="https://www.greatideasgreatlife.com/static/images/logo.png" height={30} width={30} />
             </div>
-            {/* <img
-              className="fill-current h-5 w-5 md:h-8 md:w-8 mr-2 hover:cursor-pointer "
-              src="https://www.greatideasgreatlife.com/static/images/logo.png"
-            /> */}
           </Link>
           <Link href="/">
             <span className="hover:cursor-pointer font-semibold text-xs md:text-xl tracking-tight">
