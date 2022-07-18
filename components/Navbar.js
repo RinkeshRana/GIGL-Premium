@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex items-center flex-shrink-0 shadow-2xl text-white mr-6">
           <Link href="/">
             <div className="fill-current h-5 w-5 md:h-8 md:w-8 mr-2 hover:cursor-pointer">
-              <Image src="https://www.greatideasgreatlife.com/static/images/logo.png" height={30} width={30} />
+              <Image src="https://www.greatideasgreatlife.com/static/images/logo.png" height={30} width={30} alt={'/images/logo.png'}/>
             </div>
           </Link>
           <Link href="/">
