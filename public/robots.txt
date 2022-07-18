@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+<url>
+  <loc>https://www.greatideasgreatlife.tk/</loc>
+  <lastmod>2022-07-18T02:16:05+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://www.greatideasgreatlife.tk/watch</loc>
+  <lastmod>2022-07-18T02:16:05+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
