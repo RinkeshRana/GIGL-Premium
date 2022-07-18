@@ -1,5 +1,3 @@
-User-agent: *
-Allow: /
 
 <url>
   <loc>https://www.greatideasgreatlife.tk/</loc>
