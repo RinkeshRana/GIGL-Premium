@@ -46,7 +46,14 @@ export default function Home(props) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-5004291903501531"
+        data-ad-slot="5103471411"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
       <section className="text-gray-400 bg-gray-900 body-font">
         <div className="px-6 py-10 mx-auto">
           <h1 className="text-xl md:text-3xl font-bold ">

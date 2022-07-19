@@ -37,17 +37,16 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
+        id="Adsense-id"
+        data-ad-client="ca-pub-5004291903501531"
         async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5004291903501531"
-        crossOrigin="anonymous"
-      ></Script>
-
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5004291903501531"
-        crossOrigin="anonymous"
-      ></Script>
-
+        strategy="afterInteractive"
+        onError={(e) => {
+          console.error("Script failed to load", e);
+        }}
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+        crossorigin="anonymous"
+      />
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
         strategy="afterInteractive"
@@ -67,14 +66,7 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-5004291903501531"
-        data-ad-slot="5103471411"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
+
       <Script id="init">
         (adsbygoogle = window.adsbygoogle || []).push({});
       </Script>
