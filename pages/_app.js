@@ -36,11 +36,18 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <script
+      <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5004291903501531"
         crossOrigin="anonymous"
-      ></script>
+      ></Script>
+
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5004291903501531"
+        crossOrigin="anonymous"
+      ></Script>
+
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <Script
         strategy="afterInteractive"
@@ -60,6 +67,17 @@ function MyApp({ Component, pageProps }) {
           `,
         }}
       />
+      <ins
+        className="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-5004291903501531"
+        data-ad-slot="5103471411"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+      <Script id="init">
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </Script>
       <LoadingBar
         color="#E5E7EB"
         progress={progress}
