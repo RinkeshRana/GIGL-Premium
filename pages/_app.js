@@ -69,7 +69,7 @@ function MyApp({ Component, pageProps }) {
       />
       <ins
         className="adsbygoogle"
-        style="display:block"
+        style={{ display: "block" }}
         data-ad-client="ca-pub-5004291903501531"
         data-ad-slot="5103471411"
         data-ad-format="auto"
