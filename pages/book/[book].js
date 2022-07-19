@@ -37,6 +37,14 @@ const Book = (props) => {
           content="61vbivju4za5lh5htup9kodzt22dtd"
         />
       </Head>
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-5004291903501531"
+        data-ad-slot="5103471411"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
       <div className="flex items-center justify-center h-screen bg-red-lightest">
         <div className="bg-slate-800 mt-24 lg:mt-0  w-60 shadow-lg rounded-lg">
           <img
