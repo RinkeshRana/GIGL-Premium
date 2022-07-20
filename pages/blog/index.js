@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
     <div>
       <div className="heading">
         <h1 className='text-xl justify-center w-auto p-5 text-justify'>
-          You are using this website that means you are not able to pay GIGL&apos;s premium subscription. In a mean time, when you will be to financially stable, <strong>YOU MUST PAY</strong> to original author by buying the subscription. Cheers.,
+          You are using this website that means you are not able to pay GIGL&apos;s premium subscription. In a mean time, when you will be financially stable, <strong>YOU MUST PAY</strong> to original author by buying the subscription. Cheers.,
         </h1>
       </div>
         <div className="container px-10">
