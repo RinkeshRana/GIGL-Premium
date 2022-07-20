@@ -37,6 +37,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5004291903501531"
+        crossorigin="anonymous"
+      />
+
+      <Script
         id="Adsense-id"
         data-ad-client="ca-pub-5004291903501531"
         async
