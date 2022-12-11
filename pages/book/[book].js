@@ -111,7 +111,7 @@ export async function getServerSideProps(context) {
       headers: new Headers({
         Host: "api.greatideasgreatlife.com",
         Authorization:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMxNTU3ODYsImlhdCI6MTY1NTIxNjAxOH0.GF498DxzpSV6DTAz5anTYpsYfmxji_l3PlZwvUIBEUg",
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjMxNTU3ODYsImlhdCI6MTY3MDE0OTMyN30.7ucXwjds097oBThiVu8khEM41UqCbwc9ChEEpqmlRCY",
       }),
     }
   );
