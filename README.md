@@ -1,1 +1,2 @@
-alive on: https://greatideasgreatlife.tk
+alive on: https://gigl-premium.vercel.app
+
