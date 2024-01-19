@@ -10,7 +10,7 @@ export default function Home(props) {
 
   const getMoreBooks = async () => {
     const res = await fetch(
-      `https://www.gigl-premium.vercel.app//api/fetchBooks?bookid=${bookId}`
+      `https://www.gigl-premium.vercel.app/api/fetchBooks?bookid=${bookId}`
     );
     const allBooks = await res.json();
     setBookId(bookId + 1);
